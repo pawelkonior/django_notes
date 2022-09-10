@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <h2>Products in category {{ category_name }}</h2>
+
+        <div>
+            {% for product in products %}
+                <hr>
+                {% if product.images.all.0 %}
+                    <img src="/media/{{ product.images.all.0 }}" alt="">
+                {% endif %}
+                <p>{{ product.name }}</p>
+                <p>${{ product.price }}</p>
+                <p>In stock: {{ product.stock_count }}</p>
+            {% empty %}
+                <p>Nothing to show!</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
