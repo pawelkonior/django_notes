@@ -129,9 +129,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Log all SQL
-LOGGING = {
-    "version": 1,
-    "handlers": {"console": {"class": "logging.StreamHandler"}},
-    "loggers": {"django.db.backends": {"level": "DEBUG"}},
-    "root": {"handlers": ["console"]},
-}
+# LOGGING = {
+#     "version": 1,
+#     "handlers": {"console": {"class": "logging.StreamHandler"}},
+#     "loggers": {"django.db.backends": {"level": "DEBUG"}},
+#     "root": {"handlers": ["console"]},
+# }

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+<div>
+    {% for p in products %}
+    <div>
+        {% if p.images.all.0 %}
+            <img src="/media/{{ p.images.all.0 }}" alt="">
+        {% endif %}
+
+        {% with p.images.all.0 as img %}
+            {% if img %}
+                <img src="/media/{{ img }}" alt="">
+            {% endif %}
+        {% endwith %}
+    </div>
+    {% endfor %}
+
+    'SELECT p.*, i.* FROM Product as p
+    LEFT JOIN Images as i on p.id = i.product_id
+    '
+
+    {% for p in products %}
+        {% for img in p.images.all %}
+
+        {% endfor %}
+    {% endfor %}
+</div>

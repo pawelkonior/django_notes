@@ -13,6 +13,8 @@
                 <p>{{ product.name }}</p>
                 <p>${{ product.price }}</p>
                 <p>In stock: {{ product.stock_count }}</p>
+                <a href="{% url 'store:product-detail' pk=product.pk %}">Details</a>
+                <a href="{{ product.get_absolute_url }}">Details Absolute</a>
             {% empty %}
                 <p>Nothing to show!</p>
             {% endfor %}
